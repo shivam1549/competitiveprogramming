@@ -15,3 +15,5 @@ var isPalindrome = function(s){
 }
 var getpalindrome = isPalindrome("A man, a plan, a canal: Panama");
 console.log(getpalindrome);
+
+
