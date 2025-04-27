@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // const nums = [1, 2, 3, 4, 5, 6, 7];
+        // nums.forEach((n) => {
+        //     if (n % 2 === 0)
+        //         break;
+        //     console.log(n);
+        // });
+
+        // function foo(){
+        //     return "I am outer function"
+        // }
+
+        // function test(){
+        //     console.log(bar);
+        //     return foo();
+        //     var bar = "I am variable";
+        //     function foo(){
+        //         return "I am inner";
+        //     }
+
+        // }
+
+        // console.log(test());
+
+        // let a = true;
+
+        // setTimeout(()=>{
+        //     a = false;
+        // },2000)
+
+        // while(a){
+        //     console.log("--Inside While--")
+        // }
+
+        // setTimeout(() => console.log(1), 0)
+        // console.log(2);
+
+        // new Promise(res => {
+        //     console.log(3);
+        //     res();
+        // }).then(() => console.log(4));
+
+        // console.log(5)
+
+        //         Output: 2,3,5,4,1
+        // Explanation: In the above question we discussed how the async tasks are executed in JS using event loop.
+        // There are 2 point of confusions in this question.
+        // a. Why 3 is printed just after 2?
+        // new Promise(res… — this creates a new promise and everything written inside the callback of Promise() is a synchronous task, so it will be executed on the go.
+        async function foo(){
+            console.log("A");
+            await Promise.resolve();
+            console.log("B");
+            await new Promise(resolve => setTimeout(resolve, 0));
+            console.log("c");
+        }
+        console.log("D")
+
+        foo();
+        console.log("E")
+
+    </script>
+
+</body>
+
+</html>
